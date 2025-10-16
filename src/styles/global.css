@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Lato"; /* Give your font a unique name */
+  src: url("/Lato/Lato-Regular.ttf") format("truetype");
+  font-weight: normal; /* Specify the font weight (e.g., normal, bold, 400, 700) */
+  font-style: normal; /* Specify the font style (e.g., normal, italic) */
+}
+
+@font-face {
+  font-family: "Montserrat"; /* Give your font a unique name */
+  src: url("/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal; /* Specify the font weight (e.g., normal, bold, 400, 700) */
+  font-style: normal; /* Specify the font style (e.g., normal, italic) */
+}
+
+:root {
+  --primary: #232e4c;
+  --secondary: #a29880;
+  --font-secondary: "Lato", sans-serif;
+  --font-primary: "Montserrat", sans-serif;
+}
