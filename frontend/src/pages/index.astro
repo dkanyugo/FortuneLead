@@ -1,175 +1,499 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Accordion from '../components/Accordion.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { Image } from 'astro:assets';
+import HeroBG from "../images/hero-bg.png";
+import Home1 from "../images/home_1.png";
+import Home2 from "../images/home_2.png";
+import Home3 from "../images/home_3.png";
+import Home4 from "../images/home_4.png";
+import HomeGrowth from "../images/home-growth.png";
+import HomeLeader from "../images/home-leader.png";
+import "../styles/global.css";
 ---
 
-<Layout>
-  <main>
-    <section class="h-fit bg-(--primary) text-(--secondary) py-16 sm:px-16 px-8 flex flex-row items-center justify-between">
-      <div class="xl:w-[600px] lg:w-[480px] space-y-8">
-        <div class="xl:w-[540px] lg:w-[440px] space-y-8">
-          <h1 class="lg:text-4xl lg:leading-11 sm:text-3xl text-2xl font-(--font-secondary)">
-            <span class="font-bold">Fortune Lead Co.</span> <br>
-            A leading consultancy and training firm passionate about enhancing workplace performance.
-          </h1>
-          <p>At Fortune Lead, we believe empowered people build stronger organizations.</p
+<main class="font-primary">
+  <section
+    class="relative h-[100vh] py-16 flex flex-row items-center justify-between space-x-12 text-white"
+  >
+    <div
+      class="sm:px-16 px-8 xl:w-[600px] lg:w-[480px] space-y-4 md:space-y-14"
+    >
+      <div class="lg:w-[540px] space-y-8">
+        <h1
+          class="lg:text-[2.75rem] lg:leading-13 sm:text-3xl text-2xl font-secondary font-semibold"
+        >
+          Transforming People.<br />Building Organizations.<br />Catalysing
+          Performance.<br />
+        </h1>
+        <p class="sm:text-xl">
+          At Fortune Lead we specialize in catalyzing Leadership Development,
+          Workplace Health & Safety, and People Solutions. We equip individuals
+          and organizations with practical, research-driven tools for
+          sustainable success.
+        </p>
+      </div>
+      <button
+        class="bg-white font-semibold text-(--primary) px-4 py-3 w-full xl:w-[540px] lg:w-[440px] text-nowrap text-center hover:cursor-pointer"
+        onclick="get_started()"
+      >
+        <a href="#contact" class="" id="get-started">Get Started</a>
+      </button>
+    </div>
+    <Image
+      src={HeroBG}
+      alt="Background image"
+      width="1618"
+      height="1080"
+      class="aspect-auto w-full h-full absolute -z-50 overflow-clip object-cover"
+    />
+  </section>
+  <section class="text-black sm:p-16 p-8 space-y-4 w-screen text-xl" id="about">
+    <h2 class="text-3xl">About us</h2>
+    <div class="h-full flex flex-col lg:flex-row items-start w-full space-y-8">
+      <div class="w-full space-y-8">
+        <div class="space-y-2">
+          <h3 class="font-normal text-[1.7rem]">Who are we</h3>
+          <p>
+            We are passionate about enhancing workplace performance and driving
+            organizational transformation. Our solutions are practical,
+            innovative, and tailored to meet each client’s unique needs.
+          </p>
         </div>
-        <form action="" class="w-full flex flex-col sm:flex-row space-y-3 sm:space-x-4">
-          <input type="email" placeholder="Enter your best email" class="bg-white text-black px-4 py-3 w-full">
-          <button class="bg-(--secondary) text-white px-4 py-3 w-full sm:w-fit text-nowrap">Get Started</button>
+        <div class="space-y-2">
+          <h3 class="font-normal text-[1.7rem]">Mission</h3>
+          <p>
+            To deliver high-impact, customized solutions that exceed
+            expectations and drive sustainable transformation.
+          </p>
+        </div>
+        <div class="space-y-2">
+          <h3 class="font-normal text-[1.7rem]">Vision</h3>
+          <p>To be Kenya’s leading catalyst for people growth.</p>
+        </div>
+      </div>
+      <div class="flex flex-col items-start space-y-4 w-full lg:w-1/2">
+        <h3 class="font-normal text-[1.7rem]">Our Values</h3>
+        <p>
+          <span class="font-semibold pr-4">Excellence:</span>We deliver with
+          quality and precision.
+        </p>
+        <p>
+          <span class="font-semibold pr-4">Integrity:</span>We act ethically and
+          keep our word.
+        </p>
+        <p>
+          <span class="font-semibold pr-4">Innovation:</span>We embrace learning
+          and forward-thinking.
+        </p>
+        <p>
+          <span class="font-semibold pr-4">Leadership:</span>We champion
+          transformation at every level.
+        </p>
+        <p>
+          <span class="font-semibold pr-4">Safety & Assurance:</span>We promote
+          safe and thriving workplaces.
+        </p>
+        <p>
+          <span class="font-medium italic"
+            >“Leaders become great, not because of their power, but because of
+            their ability to empower others.”</span
+          ><br />— John C. Maxwell
+        </p>
+      </div>
+    </div>
+  </section>
+  <section
+    class="text-white text-xl bg-cover min-h-[70vh] flex flex-col justify-center sm:p-16 p-8 space-y-4 w-screen relative bg-[url(/assets/home-growth.png)]"
+  >
+    <h2 class="text-3xl font-semibold pb-16">Our Approach</h2>
+    <div
+      class="h-full flex flex-col lg:flex-row items-center justify-start w-full space-y-8"
+    >
+      <p class="xl:text-4xl text-3xl w-full flex-1 lg:w-1/4">
+        The Growth <br />
+        Catalyst Formula
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 gap-y-12 w-full flex-2">
+        <div class="xl:w-[400px] md:w-[310px]">
+          <h3 class="text-2xl font-medium">We Listen First</h3>
+          <p>
+            Every organization is unique, so we take time to understand your
+            needs and tailor solutions that truly fit.
+          </p>
+        </div>
+        <div class="xl:w-[400px] md:w-[310px]">
+          <h3 class="text-2xl font-medium">We Deliver What Matters</h3>
+          <p>
+            From real-world tools to fresh ideas, we focus on impact, not just
+            ticking boxes.
+          </p>
+        </div>
+        <div class="xl:w-[400px] md:w-[310px]">
+          <h3 class="text-2xl font-medium">We Walk the Journey with You</h3>
+          <p>
+            Our team is skilled, passionate, flexible, and committed to seeing
+            you succeed.
+          </p>
+        </div>
+        <div class="xl:w-[400px] md:w-[310px]">
+          <h3 class="text-2xl font-medium">We are committed to excellence</h3>
+          <p>
+            From planning to execution, we uphold high standards in everything
+            we do
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="sm:p-16 p-8 space-y-8 w-screen text-xl">
+    <h2 class="text-3xl font-medium">Our Services</h2>
+    <div
+      class="w-full flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-8"
+      id="leader"
+    >
+      <div class="space-y-4 w-full lg:w-1/2">
+        <h3 class="text-3xl text-(--primary)">Leadership Development</h3>
+        <p>
+          We shape leaders and build cohesive teams through immersive,
+          results-driven programs.
+        </p>
+        <div class="space-y-4">
+          <div class="flex flex-row items-center justify-start">
+            <span class="text-2xl font-bold w-[80px] text-(--primary) shrink-0"
+              >01</span
+            >
+            <p>
+              Self-Leadership: Strengthen vision, discipline, and career
+              direction.
+            </p>
+          </div>
+          <div class="flex flex-row items-center justify-start">
+            <span class="text-2xl font-bold w-[80px] text-(--primary) shrink-0"
+              >02</span
+            >
+            <p>
+              Team Effectiveness: Boost trust, collaboration, and communication.
+            </p>
+          </div>
+          <div class="flex flex-row items-center justify-start">
+            <span class="text-2xl font-bold w-[80px] text-(--primary) shrink-0"
+              >03</span
+            >
+            <p>
+              Leader Development: Equip leaders to mentor, coach, and build
+              succession pipelines.
+            </p>
+          </div>
+          <div class="flex flex-row items-center justify-start">
+            <span class="text-2xl font-bold w-[80px] text-(--primary) shrink-0"
+              >04</span
+            >
+            <p>
+              Adventure Learning (Camping): Outdoor challenges that foster
+              teamwork and leadership.
+            </p>
+          </div>
+        </div>
+        <p>
+          <span class="font-semibold pr-4 text-(--primary)">Outcomes:</span
+          >Stronger leadership pipeline, engaged teams, better decision-making.
+        </p>
+      </div>
+      <Image
+        src={Home1}
+        alt="An image of people in an office"
+        width="600"
+        height="500"
+        class="aspect-auto w-full lg:w-1/2"
+      />
+    </div>
+    <div
+      class="w-full flex flex-col lg:flex-row-reverse items-center justify-between space-y-8 lg:space-y-0 lg:space-x-8"
+      id="hr"
+    >
+      <div class="space-y-4 w-full lg:w-1/2 lg:pl-8">
+        <h3 class="text-3xl text-(--primary)">Human Resource Consulting</h3>
+        <p>
+          We design agile, performance-driven HR frameworks that support growth.
+        </p>
+        <div class="space-y-4">
+          <div class="flex flex-row items-center justify-start">
+            <span class="text-2xl font-bold w-[80px] text-(--primary) shrink-0"
+              >01</span
+            >
+            <p>Talent Sourcing & Recruitment</p>
+          </div>
+          <div class="flex flex-row items-center justify-start">
+            <span class="text-2xl font-bold w-[80px] text-(--primary) shrink-0"
+              >02</span
+            >
+            <p>Organization Design & Job Evaluation</p>
+          </div>
+          <div class="flex flex-row items-center justify-start">
+            <span class="text-2xl font-bold w-[80px] text-(--primary) shrink-0"
+              >03</span
+            >
+            <p>Human Resource Audits</p>
+          </div>
+          <div class="flex flex-row items-center justify-start">
+            <span class="text-2xl font-bold w-[80px] text-(--primary) shrink-0"
+              >04</span
+            >
+            <p>Talent & Performance Management</p>
+          </div>
+          <div class="flex flex-row items-center justify-start">
+            <span class="text-2xl font-bold w-[80px] text-(--primary) shrink-0"
+              >05</span
+            >
+            <p>Remuneration & Rewards</p>
+          </div>
+          <div class="flex flex-row items-center justify-start">
+            <span class="text-2xl font-bold w-[80px] text-(--primary) shrink-0"
+              >06</span
+            >
+            <p>Training solutions & curriculum development</p>
+          </div>
+        </div>
+        <p>
+          <span class="font-semibold pr-4 text-(--primary)">Outcomes:</span
+          >Smarter hiring, fit-for-purpose structures, higher retention, and
+          sustainable high performance.
+        </p>
+      </div>
+      <Image
+        src={Home2}
+        alt="An image of people in an office"
+        width="600"
+        height="500"
+        class="aspect-auto w-full lg:w-1/2"
+      />
+    </div>
+    <div
+      class="w-full flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:space-x-8"
+      id="health"
+    >
+      <div class="space-y-4 w-full lg:w-1/2">
+        <h3 class="text-3xl text-(--primary)">Workspace Health and Safety</h3>
+        <p>
+          We help organizations build a culture of safety, compliance, and
+          resilience.
+        </p>
+        <div class="space-y-4">
+          <div class="flex flex-row items-center justify-start">
+            <span class="text-2xl font-bold w-[80px] text-(--primary) shrink-0"
+              >01</span
+            >
+            <p>First Aid & Emergency Care</p>
+          </div>
+          <div class="flex flex-row items-center justify-start">
+            <span class="text-2xl font-bold w-[80px] text-(--primary) shrink-0"
+              >02</span
+            >
+            <p>Fire Safety & Evacuation Training</p>
+          </div>
+          <div class="flex flex-row items-center justify-start">
+            <span class="text-2xl font-bold w-[80px] text-(--primary) shrink-0"
+              >03</span
+            >
+            <p>Custom Safety Programs</p>
+          </div>
+          <div class="flex flex-row items-center justify-start">
+            <span class="text-2xl font-bold w-[80px] text-(--primary) shrink-0"
+              >04</span
+            >
+            <p>Health & Safety Audits</p>
+          </div>
+        </div>
+        <p>
+          <span class="font-semibold pr-4 text-(--primary)">Outcomes:</span
+          >Reduced workplace incidents, compliance with OSH Act, improved
+          morale, business continuity.
+        </p>
+      </div>
+      <Image
+        src={Home3}
+        alt="An image of people in an office"
+        width="600"
+        height="500"
+        class="aspect-auto w-full lg:w-1/2"
+      />
+    </div>
+    <div
+      class="w-full flex flex-col lg:flex-row-reverse items-center justify-between space-y-8 lg:space-y-0 lg:space-x-8"
+      id="camp"
+    >
+      <div class="space-y-4 w-full lg:w-1/2 lg:pl-8">
+        <h3 class="text-3xl text-(--primary)">Team Building & Camping</h3>
+        <p>
+          <span class="font-medium italic"
+            >"In every walk with nature one receives far more than he
+            seeks."</span
+          >
+          — John Muir
+        </p>
+        <p>
+          We create transformative experiences that strengthen collaboration and
+          personal growth.
+        </p>
+        <div class="space-y-4">
+          <div class="flex flex-row items-center justify-start">
+            <span class="text-2xl font-bold w-[80px] text-(--primary) shrink-0"
+              >01</span
+            >
+            <p>Outdoor adventures (hiking, obstacle courses, nature walks)</p>
+          </div>
+          <div class="flex flex-row items-center justify-start">
+            <span class="text-2xl font-bold w-[80px] text-(--primary) shrink-0"
+              >02</span
+            >
+            <p>
+              Life skills training (first aid, conflict resolution, survival
+              skills)
+            </p>
+          </div>
+          <div class="flex flex-row items-center justify-start">
+            <span class="text-2xl font-bold w-[80px] text-(--primary) shrink-0"
+              >03</span
+            >
+            <p>Campfire sessions (storytelling, music, talent sharing)</p>
+          </div>
+        </div>
+        <p>
+          <span class="font-semibold pr-4 text-(--primary)">Outcomes:</span
+          >Stronger teams, improved communication, lasting memories.
+        </p>
+      </div>
+      <Image
+        src={Home4}
+        alt="An image of people in an office"
+        width="600"
+        height="500"
+        class="aspect-auto w-full lg:w-1/2"
+      />
+    </div>
+  </section>
+  <section class="sm:px-16 px-8 space-y-6" id="team">
+    <h2 class="text-3xl">Our Team</h2>
+    <div
+      class="flex flex-col md:flex-row space-y-6 md:space-y-0 items-center md:items-start md:space-x-12 xl:justify-center xl:space-x-56 justify-between lg:space-x-24"
+    >
+      <div
+        class="flex flex-col items-center justify-start space-y-6 sm:w-[500px]"
+      >
+        <img
+          src="/david.jpeg"
+          alt="Photo"
+          class="md:w-[400px] w-[280px] rounded-full border aspect-square"
+        />
+        <h3 class="text-2xl font-medium">David Kariuki</h3>
+        <p>
+          Human Resource & Leadership Expert | Certified Executive Coach <br />
+          With 20+ years of experience in financial services, technology, and
+          education, David specializes in organization design, culture
+          transformation, talent strategy, and executive coaching. He has worked
+          with leading organizations across East Africa, delivering impactful HR
+          and leadership solutions
+        </p>
+      </div>
+      <div
+        class="flex flex-col items-center justify-start space-y-6 sm:w-[500px]"
+      >
+        <img
+          src="/namu.jpeg"
+          alt="Photo"
+          class="md:w-[400px] w-[280px] rounded-full border aspect-square"
+        />
+        <h3 class="text-2xl font-medium">Richard Namu</h3>
+        <p>
+          Occupational Safety & HR Specialist | Certified Fire & Emergency
+          Instructor <br />
+          Richard brings over a decade of expertise in health & safety training,
+          audits, and emergency response. His work spans humanitarian agencies,
+          corporates, schools, and media houses across Africa, supporting
+          organizations to build resilient and safe workplaces.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section
+    class="sm:px-16 px-8 py-8 flex flex-row items-center justify-center"
+    id="contact"
+  >
+    <div
+      class="xl:w-4/5 w-full bg-(--primary) text-white rounded-4xl p-8 md:p-16"
+    >
+      <div
+        class="flex flex-col md:flex-row items-start justify-between space-y-8 md:space-y-0"
+      >
+        <div class="space-y-6 w-full">
+          <h2 class="text-3xl font-semibold">Work with us today</h2>
+          <p>We have served a variety of industries including</p>
+          <div class="md:pl-8 space-y-3">
+            <div class="flex flex-row items-center justify-start space-x-6">
+              <img src="/assets/tick.svg" alt="-" />
+              <p>Finance</p>
+            </div>
+            <div class="flex flex-row items-center justify-start space-x-6">
+              <img src="/assets/tick.svg" alt="-" />
+              <p>Hospitality</p>
+            </div>
+            <div class="flex flex-row items-center justify-start space-x-6">
+              <img src="/assets/tick.svg" alt="-" />
+              <p>Education</p>
+            </div>
+            <div class="flex flex-row items-center justify-start space-x-6">
+              <img src="/assets/tick.svg" alt="-" />
+              <p>Corporate sectors</p>
+            </div>
+          </div>
+          <p class="font-semibold">Text us on Whatsapp : +254 718 168875</p>
+          <p class="font-semibold">Text us on Instagram: @FortuneLeadke</p>
+        </div>
+        <form
+          class="flex flex-col space-y-3 w-full"
+          method="POST"
+          action="apply.php"
+        >
+          <div class="w-full space-y-4">
+            <p class="font-semibold text-xl">Enter your email</p>
+            <input
+              type="email"
+              placeholder="Enter your best email"
+              class="px-3 py-3 w-full bg-white rounded-lg text-black"
+            />
+          </div>
+          <div class="flex flex-row items-start space-x-4">
+            <div class="w-full space-y-4">
+              <p class="font-semibold text-xl">Surname</p>
+              <input
+                type="text"
+                placeholder="Doe"
+                class="px-3 py-3 w-full bg-white rounded-lg text-black"
+              />
+            </div>
+            <div class="w-full space-y-4">
+              <p class="font-semibold text-xl">Firstname</p>
+              <input
+                type="text"
+                placeholder="John"
+                class="px-3 py-3 w-full bg-white rounded-lg text-black"
+              />
+            </div>
+          </div>
+          <div class="w-full space-y-4">
+            <p class="font-semibold text-xl">Your phone number</p>
+            <input
+              type="phone"
+              placeholder="+254 712345678"
+              class="px-3 py-3 w-full bg-white rounded-lg text-black"
+            />
+          </div>
+          <button
+            class="w-full bg-white text-(--primary) rounded-lg px-6 py-4 font-bold my-3"
+          >
+            Submit
+          </button>
         </form>
       </div>
-    </section>
-    <section class="text-black sm:p-16 p-8 space-y-4 w-screen">
-      <h2 class="text-2xl">Our Approach</h2>
-      <div class="h-full flex flex-col lg:flex-row items-center justify-start w-full space-y-8">
-        <p class="xl:text-4xl text-3xl w-full flex-1 lg:w-1/4">The Growth <br> Catalyst Formula</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 gap-y-12 w-full flex-2">
-          <div class="xl:w-[400px] md:w-[310px]">
-            <h3 class="text-2xl font-medium">We Listen First</h3>
-            <p>Every organization is unique, so we take time to understand your needs and tailor solutions that truly fit.</p>
-          </div>
-          <div class="xl:w-[400px] md:w-[310px]">
-            <h3 class="text-2xl font-medium">We Deliver What Matters</h3>
-            <p>From real-world tools to fresh ideas, we focus on impact, not just ticking boxes.</p>
-          </div>
-          <div class="xl:w-[400px] md:w-[310px]">
-            <h3 class="text-2xl font-medium">We Walk the Journey with You</h3>
-            <p>Our team is skilled, passionate, flexible, and committed to seeing you succeed.</p>
-          </div>
-          <div class="xl:w-[400px] md:w-[310px]">
-            <h3 class="text-2xl font-medium">We are committed to excellence</h3>
-            <p>From planning to execution, we uphold high standards in everything we do</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="sm:p-16 p-8 space-y-8 w-screen">
-      <h2 class="text-2xl">Our Services</h2>
-      <div>
-        <Accordion acc_id="1" active=true title="Leadership development">
-          <div class="text-left md:w-3/4">
-            <p class="">We empower individuals and teams through dynamic,
-              results-driven programs that shape transformative leaders.
-              Our focus areas include:
-            </p>
-            <ul class="px-8 list-disc">
-              <li>Self-Leadership</li> 
-              <li>Team Effectiveness</li>
-              <li>Strategic Alignment</li>
-              <li>Effective Execution</li>
-            </ul>
-          </div>
-        </Accordion>
-        <Accordion acc_id="1" active=false title="Human Resource Consulting">
-          <div class="text-left md:w-3/4">
-            <p class=""> We cultivate a safety-first culture through expert training, policy support, and compliance guidance. </p>
-            <ul class="px-8 list-disc">
-              <li>Self-Leadership</li> 
-              <li>Team Effectiveness</li>
-              <li>Strategic Alignment</li>
-              <li>Effective Execution</li>
-            </ul>
-          </div>
-        </Accordion>
-        <Accordion acc_id="1" active=false title="Workplace Health and Safety">
-          <div class="text-left md:w-3/4">
-            <p class="">We empower individuals and teams through dynamic,
-              results-driven programs that shape transformative leaders.
-              Our focus areas include:
-            </p>
-            <ul class="px-8 list-disc">
-              <li>Self-Leadership</li> 
-              <li>Team Effectiveness</li>
-              <li>Strategic Alignment</li>
-              <li>Effective Execution</li>
-            </ul>
-          </div>
-        </Accordion>
-        <Accordion acc_id="1" active=false title="Team building">
-          <div class="text-left md:w-3/4">
-            <p class="">We empower individuals and teams through dynamic,
-              results-driven programs that shape transformative leaders.
-              Our focus areas include:
-            </p>
-            <ul class="px-8 list-disc">
-              <li>Self-Leadership</li> 
-              <li>Team Effectiveness</li>
-              <li>Strategic Alignment</li>
-              <li>Effective Execution</li>
-            </ul>
-          </div>
-        </Accordion>
-        <Accordion acc_id="1" active=false title="Camping">
-          <div class="text-left md:w-3/4">
-            <p class="">We empower individuals and teams through dynamic,
-              results-driven programs that shape transformative leaders.
-              Our focus areas include:
-            </p>
-            <ul class="px-8 list-disc">
-              <li>Self-Leadership</li> 
-              <li>Team Effectiveness</li>
-              <li>Strategic Alignment</li>
-              <li>Effective Execution</li>
-            </ul>
-          </div>
-        </Accordion>
-      </div>
-    </section>
-    <section class="sm:p-16 p-8 space-y-4">
-      <h2 class="text-2xl">About us</h2>
-      <div class="flex flex-col md:flex-row items-start justify-start md:space-x-8 space-y-6 md:space-y-0">
-        <div class="space-y-6">
-          <p>Fortune Lead Co. is a leading consultancy and training firm passionate about enhancing workplace performance.</p>
-          <p>At Fortune Lead, we believe empowered people build stronger organizations.</p>
-          <p>We partner with teams and leaders to foster better leadership, safer workplaces, and thriving cultures.</p>
-          <p>Through practical, people-centred solutions in leadership, safety, and HR, we deliver impact that lasts.</p>
-          <p>With passion, experience, and creativity, we don’t just deliver solutions —we transform.</p>
-        </div>
-        <div class="sm:w-[480px]">
-          <h3 class="text-2xl">Vision</h3>
-          <p>To be Kenya’s leading catalyst for people growth.</p>
-          <br>
-          <h3 class="text-2xl">Core values</h3>
-          <ul>
-            <li>Excellence</li>
-            <li>Integrity</li>
-            <li>Innovation</li>
-            <li>Safety and Assurance</li>
-          </ul>
-        </div>
-      </div>
-      <h3 class="text-2xl">Mission</h3>
-      <p>To drive organizational transformation through innovative tailored, and high-impact solutions that exceed expectations.</p>
-    </section>
-    <section class="sm:px-16 px-8 space-y-6">
-      <h2 class="text-2xl">Our Team</h2>
-      <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 items-center md:items-start md:space-x-12 xl:justify-center xl:space-x-56 justify-between lg:space-x-24">
-        <div class="flex flex-col items-center justify-start space-y-6 sm:w-[500px]">
-          <img src="/david.jpeg" alt="Photo" class="md:w-[400px] w-[280px] rounded-full border aspect-square">
-          <h3 class="text-2xl font-medium">David Kariuki</h3>
-          <p> Human Resource & Leadership Expert | Certified Executive Coach <br> With 20+ years of experience in financial services, technology, and education, David specializes in organization design, culture transformation, talent strategy, and executive coaching. He has worked with leading organizations across East Africa, delivering impactful HR and leadership solutions </p>
-        </div>
-        <div class="flex flex-col items-center justify-start space-y-6 sm:w-[500px]">
-          <img src="/namu.jpeg" alt="Photo" class="md:w-[400px] w-[280px] rounded-full border aspect-square">
-          <h3 class="text-2xl font-medium">Richard Namu</h3>
-          <p>Occupational Safety & HR Specialist | Certified Fire & Emergency Instructor <br> Richard brings over a decade of expertise in health & safety training, audits, and emergency response. His work spans humanitarian agencies, corporates, schools, and media houses across Africa, supporting organizations to build resilient and safe workplaces.</p>
-        </div>
-      </div>
-    </section>
-    <section class="sm:px-16 px-8 py-8">
-      <h2 class="text-2xl">Work with us today</h2>
-      <div class="space-y-6">
-        <div class="flex flex-col sm:flex-row space-y-3 sm:space-x-6 pt-8">
-          <input type="email" placeholder="Enter your best email" class="border-2 border-(--primary) px-3 py-2 w-full sm:w-fit">
-          <button class="text-white bg-(--primary) px-6 py-3 h-full hover:cursor-pointer">Get Started</button>
-        </div>
-        <p>You can also contact us on whatsapp: +254 70000000</p>
-      </div>
-    </section>
-  </main>
-</Layout>
-<script src="/scripts/accordion.js" is:inline></script>
+    </div>
+  </section>
+</main>
