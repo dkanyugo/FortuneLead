@@ -8,8 +8,8 @@
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/Montserrat/Montserrat-VariableFont.ttf") format("truetype");
-  font-weight: 400;
+  src: url("../fonts/Montserrat/static/Montserrat-Regular.ttf")
+    format("truetype");
   font-style: normal;
   font-display: swap;
 }
@@ -17,12 +17,12 @@
   --font-primary: "Montserrat", sans-serif;
   --font-secondary: "Lato", sans-serif;
 }
+
+h2 {
+  @apply font-secondary text-3xl font-medium;
+}
 :root {
   --primary: #232e4c;
   --font-primary: "Montserrat", sans-serif;
   --font-secondary: "Lato", sans-serif;
-}
-
-.mont {
-  font-family: var(--font-secondary);
 }

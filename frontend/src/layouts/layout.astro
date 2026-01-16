@@ -10,31 +10,28 @@ import "../styles/global.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Fortune Lead</title>
   </head>
-  <body class="--font-primary">
+  <body class="font-primary">
     <header id="header">
       <nav
-        class="absolute text-white text-lg w-screen flex flex-row items-center justify-center md:justify-between py-4 px-16 z-40"
+        class="absolute z-50 flex w-screen flex-row items-center justify-center px-16 py-4 text-lg text-white md:justify-between"
       >
         <div
-          class="flex flex-row items-center justify-center sm:justify-start md:space-x-12 space-x-4"
+          class="flex flex-row items-center justify-center space-x-4 sm:justify-start md:space-x-12"
         >
           <img
             src="/assets/logo-white.svg"
             alt=""
-            class="md:w-[150px] w-[200px] aspect-auto"
+            class="aspect-auto w-[200px] md:w-[150px]"
           />
-          <a href="" class="px-4 py-3 text-white hidden lg:block">Home</a>
-          <a href="#about" class="px-4 py-3 text-white hidden lg:block"
-            >About</a
+          <a href="" class="hidden px-4 py-3 text-white lg:block">Home</a>
+          <a href="#about" class="hidden px-4 py-3 text-white lg:block">About</a
           >
           <div class="relative z-50">
             <div
-              class="flex flex-row items-center justify-start space-x-2 py-3 hover:cursor-pointer"
+              class="hidden flex-row items-center justify-start space-x-2 py-3 hover:cursor-pointer lg:flex"
               onmouseover="set_services(true)"
             >
-              <div class="text-white hidden lg:block" id="services-link">
-                Services
-              </div>
+              <div class="text-white" id="services-link">Services</div>
               <img
                 src="/assets/chevron-down.svg"
                 alt="chevron-down"
@@ -42,28 +39,28 @@ import "../styles/global.css";
               />
             </div>
             <div
-              class="bg-black/40 flex-col absolute py-4 w-fit text-nowrap hidden"
+              class="absolute hidden w-fit flex-col bg-black/40 py-4 text-nowrap"
               id="nav-services"
               onmouseout="toggle_services(false)"
             >
               <a
                 href="#leader"
-                class="hover:cursor-pointer hover:border-white border-b-2 border-white/0 px-4 pb-2"
+                class="border-b-2 border-white/0 px-4 pb-2 hover:cursor-pointer hover:border-white"
                 >Leadership Development</a
               >
               <a
                 href="#hr"
-                class="hover:cursor-pointer hover:border-white border-b-2 border-white/0 px-4 pb-2"
+                class="border-b-2 border-white/0 px-4 pb-2 hover:cursor-pointer hover:border-white"
                 >Human Resource Consulting</a
               >
               <a
                 href="#health"
-                class="hover:cursor-pointer hover:border-white border-b-2 border-white/0 px-4 pb-2"
+                class="border-b-2 border-white/0 px-4 pb-2 hover:cursor-pointer hover:border-white"
                 >Workspace Health & Safety</a
               >
               <a
                 href="#camp"
-                class="hover:cursor-pointer hover:border-white border-b-2 border-white/0 px-4 pb-2"
+                class="border-b-2 border-white/0 px-4 pb-2 hover:cursor-pointer hover:border-white"
                 >Team Building & Camping</a
               >
             </div>
@@ -71,21 +68,28 @@ import "../styles/global.css";
         </div>
         <a
           href="#contact"
-          class="bg-white px-4 py-3 text-(--primary) hidden md:block"
+          class="hidden bg-white px-4 py-3 text-(--primary) md:block"
           >Book a call</a
         >
       </nav>
     </header>
     <slot />
-    <footer class="bg-(--primary) text-white h-[50vh] w-screen">
-      <div class="p-16 flex flex-col space-y-4">
-        <h2 class="font-bold text-xl">Important links</h2>
+    <div
+      id="up"
+      class="sticky bottom-20 left-11/12 hidden aspect-square w-[60px] rounded-full border-2 border-(--primary) bg-white p-2 hover:cursor-pointer"
+      onclick="window.scrollTo(0, 0)"
+    >
+      <img src="/assets/arrow-up.svg" alt="" />
+    </div>
+    <footer class="h-[50vh] w-screen bg-(--primary) text-white">
+      <div class="flex flex-col space-y-4 p-16">
+        <h2 class="text-xl font-bold">Important links</h2>
         <a href="" class="hover:cursor-pointer">Home</a>
         <a href="#about" class="hover:cursor-pointer">About us</a>
         <a href="#contact" class="hover:cursor-pointer">Contact</a>
       </div>
       <p class="text-center">&copy Copyright 2025</p>
     </footer>
-    <script src="/scripts/index.js"></script>
+    <script src="/scripts/index.js" is:inline></script>
   </body>
 </html>
