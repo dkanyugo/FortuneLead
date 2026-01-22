@@ -487,8 +487,9 @@ import Layout from "../layouts/layout.astro";
           </div>
           <form
             class="flex w-full flex-col space-y-3"
-            method="POST"
-            action="register.php"
+            hx-post="register.php"
+            hx-target="#NotificationCenter"
+            hx-swap="innerHTML"
           >
             <div class="flex w-full flex-col space-y-2">
               <label for="email" class="text-xl font-semibold"
@@ -496,6 +497,7 @@ import Layout from "../layouts/layout.astro";
               >
               <input
                 type="email"
+                required
                 name="email"
                 placeholder="johndoe@example.com"
                 class="w-full rounded-lg bg-white px-3 py-3 text-black"
@@ -508,6 +510,7 @@ import Layout from "../layouts/layout.astro";
                 >
                 <input
                   type="text"
+                  required
                   name="surname"
                   placeholder="Doe"
                   class="w-full rounded-lg bg-white px-3 py-3 text-black"
@@ -522,6 +525,7 @@ import Layout from "../layouts/layout.astro";
                   name="firstname"
                   placeholder="John"
                   class="w-full rounded-lg bg-white px-3 py-3 text-black"
+                  required
                 />
               </div>
             </div>
@@ -531,6 +535,7 @@ import Layout from "../layouts/layout.astro";
               >
               <input
                 type="phone"
+                required
                 name="phone"
                 placeholder="+254 712345678"
                 class="w-full rounded-lg bg-white px-3 py-3 text-black"
@@ -547,4 +552,5 @@ import Layout from "../layouts/layout.astro";
     </section>
   </main>
   <script is:inline src="/scripts/NotificationManager.js"></script>
+  <script is:inline src="/scripts/htmx.min.js"></script>
 </Layout>

@@ -2,10 +2,14 @@
 include "./autoloader.php";
 $success = false;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+try{
   $db = Database::get_database();
   if ($_POST['surname'] !== NULL && $_POST['firstname'] !== NULL && $_POST['email'] !== NULL && $_POST['phone'] !== NULL){
     $success = $db->add_lead($_POST['surname'], $_POST['firstname'], $_POST['email'], $_POST['phone']);
   }
+} catch (Exception $e){
+  $success=false;
+}
 }
 if ($success) {
 ?>

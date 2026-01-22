@@ -28,11 +28,7 @@ class Database{
     $this->user = $db_user;
     $this->pass = $db_pass;
     $this->name = $db_name;
-    try{
-      $this->connection = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-    } catch(Exception $e){
-      exit();
-    } 
+    $this->connection = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
   }
 
   /**
