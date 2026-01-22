@@ -1,5 +1,7 @@
 ---
 import { Image } from "astro:assets";
+import NotiAlert from "../components/NotiAlert.astro";
+import { NotiLevel } from "../components/NotiAlert.astro";
 import HeroBG from "../images/hero-bg.png";
 import Home1 from "../images/home_1.png";
 import Home2 from "../images/home_2.png";
@@ -13,6 +15,12 @@ import Layout from "../layouts/layout.astro";
 
 <Layout>
   <main class="">
+    <section
+      class="fixed top-0 z-50 flex w-screen flex-col items-center space-y-2 p-8"
+      id="NotificationCenter"
+    >
+    </section>
+
     <section
       class="relative flex h-[100vh] flex-row items-center justify-between space-x-12 py-16 text-white"
     >
@@ -207,12 +215,11 @@ import Layout from "../layouts/layout.astro";
                 teamwork and leadership.
               </p>
             </div>
+            <p>
+              <span class="pr-4 font-semibold text-(--primary)">Outcomes:</span
+              >Stronger leadership pipeline, engaged teams, better
+            </p>
           </div>
-          <p>
-            <span class="pr-4 font-semibold text-(--primary)">Outcomes:</span
-            >Stronger leadership pipeline, engaged teams, better
-            decision-making.
-          </p>
         </div>
         <Image
           src={Home1}
@@ -222,6 +229,7 @@ import Layout from "../layouts/layout.astro";
           class="aspect-auto w-full lg:w-1/2"
         />
       </div>
+
       <div
         class="flex w-full flex-col items-center justify-between space-y-8 lg:flex-row-reverse lg:space-y-0 lg:space-x-8"
         id="hr"
@@ -482,19 +490,19 @@ import Layout from "../layouts/layout.astro";
             method="POST"
             action="register.php"
           >
-            <div class="w-full space-y-4">
+            <div class="flex w-full flex-col space-y-2">
               <label for="email" class="text-xl font-semibold"
                 >Enter your email</label
               >
               <input
                 type="email"
                 name="email"
-                placeholder="Enter your best email"
+                placeholder="johndoe@example.com"
                 class="w-full rounded-lg bg-white px-3 py-3 text-black"
               />
             </div>
-            <div class="flex flex-row items-start space-x-4">
-              <div class="w-full space-y-4">
+            <div class="flex flex-row items-start space-x-2">
+              <div class="flex w-full flex-col space-y-2">
                 <label for="surname" class="text-xl font-semibold"
                   >Surname</label
                 >
@@ -505,7 +513,7 @@ import Layout from "../layouts/layout.astro";
                   class="w-full rounded-lg bg-white px-3 py-3 text-black"
                 />
               </div>
-              <div class="w-full space-y-4">
+              <div class="flex w-full flex-col space-y-2">
                 <label for="firstname" class="text-xl font-semibold"
                   >Firstname</label
                 >
@@ -517,7 +525,7 @@ import Layout from "../layouts/layout.astro";
                 />
               </div>
             </div>
-            <div class="w-full space-y-4">
+            <div class="flex w-full flex-col space-y-2">
               <label for="phone" class="text-xl font-semibold"
                 >Your phone number</label
               >
@@ -529,7 +537,7 @@ import Layout from "../layouts/layout.astro";
               />
             </div>
             <button
-              class="my-3 w-full rounded-lg bg-white px-6 py-4 font-bold text-(--primary)"
+              class="my-3 w-full rounded-lg bg-white px-6 py-4 font-bold text-(--primary) hover:cursor-pointer"
             >
               Submit
             </button>
@@ -538,5 +546,5 @@ import Layout from "../layouts/layout.astro";
       </div>
     </section>
   </main>
-  <style is:inline></style>
+  <script is:inline src="/scripts/NotificationManager.js"></script>
 </Layout>

@@ -1,0 +1,12 @@
+---
+const { level } = Astro.props;
+export const NotiLevel = {
+  success: "NotiSuccess",
+  warning: "NotiWarning",
+  failure: "NotiFailure",
+};
+---
+
+<div class={level} id="Notification">
+  <p><slot /></p>
+</div>
